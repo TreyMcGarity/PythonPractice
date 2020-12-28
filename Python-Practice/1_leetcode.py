@@ -1,7 +1,9 @@
 ####  LeetCode Problems  ####
 from time import time
+from doubly_linkedList import LinkedList
 
 start_stamp = time()
+
 """
 1) Given an array of integers nums and and integer target, 
 return the indices of the two numbers such that they add up to target.
@@ -209,27 +211,6 @@ def first_unique_char(word):
 # print(first_unique_char("barbados"))
 # print(first_unique_char("crunchy"))
 
-def shortest_substring():
-    s = "ac"
-    arr = [i for i in s]
-    rev_arr = [i for i in arr[::-1]]
-    palindrom = []
-    for i, v in enumerate(arr):
-        if v == rev_arr[i]:
-            palindrom.append(v)
-    if palindrom == []:
-        palindrom.append(arr[0])
-    # print(palindrom)
-    pass
-
-"""
-
-"""
-def make_palindrom():
-    pass
-
-print(make_palindrom())
-
 def validParetheses():
     arr = []
     validmap = {'(':')', '{':'}', '[':']'}
@@ -248,7 +229,35 @@ def validParetheses():
             return False
     return arr == []
 
+def roman_two_int(s):
+    symbols = {
+        "I": 1,
+        # "II": 2,
+        # "III": 3,
+        # "IV": 4,
+        "V": 5,
+        # "VI": 6,
+        # "VII": 7,
+        # "VIII": 8,
+        # "IX": 9,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000,
+    }
+    result = 0
+    for i in range(len(s)): 
+        # prevent index error / if value at position is greater than previous
+        if i > 0 and symbols[s[i]] > symbols[s[i - 1]]:
+            # add value of current - 2 times previous value
+            result += symbols[s[i]] - 2  * symbols[s[i - 1]]
+        else:
+            # if not special case add number normally
+            result += symbols[s[i]]
+    return result
 
+# print(roman_two_int("XLIX"))
 
 # to get time elapsed printed:
 end_stamp = time()
