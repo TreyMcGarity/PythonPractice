@@ -259,6 +259,47 @@ def roman_two_int(s):
 
 # print(roman_two_int("XLIX"))
 
+"""
+To determine how you "say" a digit string, split it into the minimal 
+number of groups so that each group is a contiguous section all of the same 
+character. Then for each group, say the number of characters, then say the 
+character. To convert the saying into a digit string, replace the counts with 
+a number and concatenate every saying.
+
+    :type n: int
+    :rtype: str
+"""
+
+def countAndSay(num):
+    print("")
+        # unsyure
+
+print(countAndSay(4))
+
+"""
+
+"""
+
+board = [["5","3",".",".","7",".",".",".","."]
+,["6",".",".","1","9","5",".",".","."]
+,[".","9","8",".",".",".",".","6","."]
+,["8",".",".",".","6",".",".",".","3"]
+,["4",".",".","8",".","3",".",".","1"]
+,["7",".",".",".","2",".",".",".","6"]
+,[".","6",".",".",".",".","2","8","."]
+,[".",".",".","4","1","9",".",".","5"]
+,[".",".",".",".","8",".",".","7","9"]]
+
+def isValidSudoku(b):
+    for x in b:
+        row = {}
+        for k, y in enumerate(x):
+            if k <= 8 and y not in row:
+                row[y] = 1
+                print(row)
+
+print(isValidSudoku(board))
+
 # to get time elapsed printed:
 end_stamp = time()
 elapsed = end_stamp - start_stamp
