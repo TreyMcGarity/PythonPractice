@@ -43,3 +43,21 @@ def countTinyPairs(a, b, k):
     return count
 
 # print(countTinyPairs([1, 2, 3], [1, 2, 3], 31))
+
+
+"""
+find third side length of triangle given 2 sides
+"""
+
+def third_side(side1, side2):
+
+    side3 = pow(side1, 2) + pow(side2, 2)
+    result = int(math.sqrt(side3))
+    return result
+
+print(third_side(3,4))
+
+
+"""
+
+"""
