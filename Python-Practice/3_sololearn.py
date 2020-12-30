@@ -50,7 +50,6 @@ find third side length of triangle given 2 sides
 """
 
 def third_side(side1, side2):
-
     side3 = pow(side1, 2) + pow(side2, 2)
     result = int(math.sqrt(side3))
     return result
@@ -59,5 +58,12 @@ print(third_side(3,4))
 
 
 """
-
+find 3rd angle given 2 angles
 """
+
+def third_angle(angle1, angle2):
+    angle3 = 180 - angle1 - angle2
+    return angle3
+
+print(third_angle(90, 60)) 
+
