@@ -49,12 +49,12 @@ def countTinyPairs(a, b, k):
 find third side length of triangle given 2 sides
 """
 
-def third_side(side1, side2):
+def pythagorean_theorem(side1, side2):
     side3 = pow(side1, 2) + pow(side2, 2)
     result = int(math.sqrt(side3))
     return result
 
-print(third_side(3,4))
+# print(pythagorean_theorem(3,4))
 
 
 """
@@ -65,5 +65,34 @@ def third_angle(angle1, angle2):
     angle3 = 180 - angle1 - angle2
     return angle3
 
-print(third_angle(90, 60)) 
+# print(third_angle(90, 60)) 
 
+"""
+Law of Sines
+
+2 angles and 1 side opposite to a given angle to solve for other side of other angle  
+
+a / sin(A) = b / sin(B) = c / sin(C)
+"""
+
+def law_of_sine(angle1, angle2, side1):
+    side2 = (side1/math.sin(math.radians(angle1))) * math.sin(math.radians(angle2))
+    return side2
+
+
+"""
+Solving a Triangle given angle B and C and side b
+
+find angle A and sides a and c
+"""
+B = 35
+C = 105
+b = 7
+
+c = law_of_sine(B, C, b)
+a = pythagorean_theorem(b, c)
+A = third_angle(B, C)
+
+
+print("given B =", B,"C =", C, "and b =", b,
+    "\nA =", A, "a =", a, "c =", c)
