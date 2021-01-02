@@ -76,9 +76,22 @@ a / sin(A) = b / sin(B) = c / sin(C)
 """
 
 def law_of_sine(angle1, angle2, side1):
-    side2 = (side1/math.sin(math.radians(angle1))) * math.sin(math.radians(angle2))
-    return side2
+    return side1/math.sin(math.radians(angle1)) * math.sin(math.radians(angle2))
+    
 
+# print(law_of_sine(90, 60, 5))
+
+"""
+Law of Cosine
+
+2 sides and an angle to a given side to solve for missing side of given angle
+
+c= sqrt[a^2+b^2﹣2abcos(C)]
+"""
+
+def law_of_cosine(side1, side2, angle1):
+    return math.sqrt((math.pow(side1, 2)) * (math.pow(side2, 2)) - 2 * side1 * side2 * math.cos(angle1))
+    
 
 """
 Solving a Triangle given angle B and C and side b
