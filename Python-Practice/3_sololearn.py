@@ -5,7 +5,7 @@ string = "hello world"
 def reverse_string(text):
     return text[::-1]
     
-print(reverse_string(string))
+# print(reverse_string(string))
 
 def averageLength(text):
     cleanup  = string.translate({ord(i): None for i in ".,;!?"})
@@ -89,10 +89,16 @@ Law of Cosine
 c= sqrt[a^2+b^2﹣2abcos(C)]
 """
 
-def law_of_cosine(side1, side2, angle1):
+def law_of_cosine_angle(side1, side2, angle1):
     return math.sqrt((math.pow(side1, 2)) * (math.pow(side2, 2)) - 2 * side1 * side2 * math.cos(angle1))
-    
 
+# print(law_of_cosine_angle)
+
+def law_of_cosine_sides(side1, side2, side3):
+    return math.degrees(math.acos((math.pow(side1,2) + math.pow(side2,2) - math.pow(side3,2)) / (2 * side1 * side2)))
+
+# print(law_of_cosine_sides(6,7,8))
+    
 """
 Solving a Triangle given angle B and C and side b
 
